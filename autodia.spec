@@ -14,7 +14,6 @@ URL:		    http://www.aarontrevena.co.uk/opensource/autodia/
 Source:		    http://search.cpan.org/CPAN/authors/id/T/TE/TEEJAY/%{Name}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildArch:	    noarch
-BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 AutoDia is a modular application that parses source code or data (if a
