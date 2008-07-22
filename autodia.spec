@@ -1,7 +1,7 @@
 %define name	autodia
 %define Name	Autodia
 %define version	2.03
-%define release	%mkrel 2
+%define release	%mkrel 4
 %define _requires_exceptions perl(Inline::Java)
 
 Name:		    %{name}
