@@ -1,20 +1,18 @@
-%define name	autodia
-%define Name	Autodia
-%define version	2.08
-%define release	%mkrel 2
-%define _requires_exceptions perl(Inline::Java)
+%define upstream_name	 Autodia
+%define upstream_version 2.10
 
-Name:		    %{name}
-Version:	    %{version}
-Release:	    %{release}
-Summary:	    Automatic Dia/UML generator
-License:	    GPL
-Group:		    Text tools
-URL:		    http://www.aarontrevena.co.uk/opensource/autodia/
-Source:		    http://search.cpan.org/CPAN/authors/id/T/TE/TEEJAY/%{Name}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Name:       autodia
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	Automatic Dia/UML generator
+License:	GPL
+Group:		Text tools
+Url:		http://www.aarontrevena.co.uk/opensource/autodia/
+Source0:    http://search.cpan.org/CPAN/authors/id/T/TE/TEEJAY/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildArch:	    noarch
-BuildRoot:	    %{_tmppath}/%{name}-%{version}
+BuildRoot:	    %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 AutoDia is a modular application that parses source code or data (if a
@@ -24,7 +22,7 @@ are standard UML diagrams showing dependencies, superclasses, packages,
 classes and inheritances, as well as the methods, etc of each class. 
 
 %prep
-%setup -n %{Name}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -43,6 +41,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc CHANGES COPYING CREDITS FAQ README INSTALL TODO
 %{_bindir}/*
-%{perl_vendorlib}/%{Name}
-%{perl_vendorlib}/%{Name}.pm
+%{perl_vendorlib}/*
 %{_mandir}/*/*
