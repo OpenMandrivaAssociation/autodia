@@ -3,7 +3,7 @@
 
 Name:		autodia
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	5
 
 Summary:	Automatic Dia/UML generator
 License:	GPL
