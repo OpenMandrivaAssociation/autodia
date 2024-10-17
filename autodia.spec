@@ -8,7 +8,7 @@ Release:	5
 Summary:	Automatic Dia/UML generator
 License:	GPL
 Group:		Text tools
-Url:		http://www.aarontrevena.co.uk/opensource/autodia/
+Url:		https://www.aarontrevena.co.uk/opensource/autodia/
 Source0:	http://search.cpan.org/CPAN/authors/id/T/TE/TEEJAY/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
