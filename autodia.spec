@@ -1,15 +1,14 @@
 %define upstream_name	 Autodia
-%define upstream_version 2.10
 
 Name:		autodia
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	2.14
+Release:	1
 
 Summary:	Automatic Dia/UML generator
 License:	GPL
 Group:		Text tools
 Url:		https://www.aarontrevena.co.uk/opensource/autodia/
-Source0:	http://search.cpan.org/CPAN/authors/id/T/TE/TEEJAY/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/T/TE/TEEJAY/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildArch:	noarch
@@ -22,14 +21,14 @@ are standard UML diagrams showing dependencies, superclasses, packages,
 classes and inheritances, as well as the methods, etc of each class. 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 # what does script do there ?
 rm -f %{buildroot}%{perl_vendorlib}/*.pl
 
@@ -38,4 +37,3 @@ rm -f %{buildroot}%{perl_vendorlib}/*.pl
 %{_bindir}/*
 %{perl_vendorlib}/*
 %{_mandir}/*/*
-
